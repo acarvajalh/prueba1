@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Awakelab Full Stack Python</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Loading Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Clínica Médica </a>
+
+        <!-- Navigation Bar Hamburger-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        <!-- End Navigation Bar Hamburger -->
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link scroll-trigger" href="index.html">
+                  Inicio
+                
+              </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link scroll-trigger" href="contacto.html">
+                  Contacto
+              </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      Registro/ Inicio de Sesión<span class="caret"></span>
+              </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item scroll-trigger" href="#" data-toggle="modal" data-target="#profile-modal">
+                      Iniciar sesión
+                  </a>
+                        <a class="dropdown-item scroll-trigger" data-toggle="modal" data-target="#settings-modal">
+                        Registro
+                  </a>
+
+                </li>
+            </ul>
+
+            </div>
+            <!-- Navigation Links -->
+    </nav>
+    <!-- End Navigation Bar -->
+
+    <!-- Section: Principal -->
+    <div class="container-fluid bg-principal" id="principal">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron jumbotron-main">
+                    <h2>Tu salud nos importa.</h2>
+                    <h3>Nosotros te ayudaremos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Principal -->
+
+    <!-- Section: Competencias -->
+    <div class="container-fluid bg-dark" id="competencias">
+        <div class="row">
+            <h3>Nuestras Especialidades</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Medicina General</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Consultas médicas</h4>
+                        <p class="card-text">Contamos con un staff de Médicos Generales y especialistas en Medicina Familiar y Medicina Interna que se preocupan por el diagnóstico de lña condición inicial del paciente y abordan diferentes patologías comunes.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Pediatría</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Recién nacidos y niños hasta la adolescencia.</h4>
+                        <p class="card-text">Contamos con un staff de Pediatras que se ocupan del estudio del crecimiento y el desarrollo de los niños hasta la adolescencia, así como el tratamiento de sus enfermedades.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Ginecología y Obstetricia</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Ginecólogos especialistas en Obstetricia</h4>
+                        <p class="card-text">Atendemos la salud reproductiva de manera integral, con un equipo médico que las acompaña en la adolescencia, embarazo y parto.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Odontología</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Urgencia Dental</h4>
+                        <p class="card-text">Contamos con todas las Especialidades del Área Odontológica. Atención personalizada para Adultos y Niños.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- End Section: Competencias -->
+
+    <!-- Section: Equipo -->
+    <div class="container-fluid bg-light" id="equipo">
+        <div class="row">
+            <h3>Nuestro Equipo</h3>
+        </div>
+        <div class="row">
+            <div id="team-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner" style="padding: 4rem;" role="listbox">
+                    <div style="height: 600px" class="carousel-item active">
+                        <img class="d-block img-fluid carousel-img" src="img/pexels-photo-263194.jpeg" alt="">
+                        <div class="carousel-caption">
+                            Ginecología y Obstetricia.<br> Las 24 horas del día, los siete días de la semana.
+                        </div>
+                    </div>
+                    <div style="height: 600px" class="carousel-item">
+                        <img class="d-block img-fluid carousel-img" src="img/dentistas.jpeg" alt="">
+                        <div class="carousel-caption">
+                            Contamos con todas las especialidades del Área Odontológica. <br> Atención personalizada para Adultos y Niños. <br> Agenda tu hora.
+                        </div>
+                    </div>
+                    <div style="height: 600px" class="carousel-item">
+                        <img class="d-block img-fluid carousel-img" src="img/kine.jpeg" alt="">
+                        <div class="carousel-caption">
+                            Contamos con todas las especialidades del Área Odontológica. <br> Atención personalizada para Adultos y Niños. <br> Agenda tu hora.
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#team-carousel" role="button" data-slide="prev">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#team-carousel" role="button" data-slide="next">
+                    <span class="icon-next" aria-hidden="true"></span>
+                </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#team-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#team-carousel" data-slide-to="1"></li>
+                    <li data-target="#team-carousel" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Equipo -->
+
+    <!-- Section: Enlaces -->
+    <div class="container-fluid bg-dark" id="enlaces">
+        <div class="row">
+            <h3>Proveedores de Salud</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="img/pngwing.com.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Hospitales</h5>
+                        <ul>
+                            <li>Hospital Clínico San Borja Arriarán <a href="https://hcsba.cl/wp/">Ver más</a></li>
+                            <li>Hospital Dr. Gustavo Fricke <a href="http://www.hospitalfricke.cl/">Ver más</a></li>
+                            <li>Hospital La Serena <a href="https://www.hospitalserena.cl/">Ver más</a></li>
+                            <li>Hospital de Iquique <a href="https://www.hospitaliquique.cl/">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="img/cirujano.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Clínicas</h5>
+                        <ul>
+                            <li>Clínica Alemana de Santiago<a href="https://www.clinicaalemana.cl/">Ver más</a></li>
+                            <li>Clínica RedSalud <a href="https://www.redsalud.cl">Ver más</a></li>
+                            <li>Clínica Indisa <a href="https://www.indisa.cl">Ver más</a></li>
+                            <li>Clínica Santa Rosa<a href="https://www.clinicasantarosa.cl/">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="img/lesion.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Isapres</h5>
+                        <ul>
+                            <li>Isapre Colmena <a href="https://www.colmena.cl">Ver más</a></li>
+                            <li>Isapre Consalud <a href="https://www.consalud.cl">Ver más</a></li>
+                            <li>Isapre Banmédica <a href="https://www.banmedica.cl">Ver más</a></li>
+                            <li>Isapre Cruz Blanca <a href="https://www.cruzblanca.cl">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="img/tomados-de-la-mano.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Fonasa</h5>
+                        <ul>
+                            <li>Fonasa tipo A<a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo B <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo C <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo D <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Enlaces -->
+
+
+    <footer class="footer bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+    </footer>
+
+    <!-- MODAL FORMS -->
+    <div class="modal" id="profile-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+
+                </div>
+                <div class="modal-body">
+
+                    <!-- Section:  modal Inicio sesion -->
+                    <div class="container-fluid bg-light" id="inicio_sesion">
+                        <div class="row">
+                            <h2>Iniciar sesión</h2>
+                        </div>
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-sm-6" id="contact-form">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="contact-name">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="persona_correo" placeholder="example@micorreo.cl">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Contraseña</label>
+                                        <input type="email" class="form-control" id="persona_pass" placeholder="1234">
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="validar_sesion()">Iniciar sesión</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Section: modal Inicio sesion -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="settings-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+
+                </div>
+                <div class="modal-body">
+                    Registro
+                    <!-- Section: Modal Registrar -->
+                    <div class="container-fluid bg-light" id="contacto">
+                        <div class="row">
+                            <h2>Regístrate aquí</h2>
+                        </div>
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-sm-6" id="contact-form">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="contact-name">Nombres y Apellidos</label>
+                                        <input type="text" class="form-control" id="contact-name" placeholder="example@micorreo.cl">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Crear Contraseña</label>
+                                        <input type="email" class="form-control" id="contact-email" placeholder="1234">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Repetir Contraseña</label>
+                                        <input type="email" class="form-control" id="contact-email" placeholder="1234">
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="registrar()">Registrar</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Section: Modal Registrar -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL FORMS -->
+
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
