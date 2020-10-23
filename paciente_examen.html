@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Examenes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Loading Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Clínica Médica </a>
+
+        <!-- Navigation Bar Hamburger-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        <!-- End Navigation Bar Hamburger -->
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link scroll-trigger" href="index.html">
+                  Inicio
+              </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link scroll-trigger" href="contacto.html">
+                  Contacto
+              </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Rosa Jara<span class="caret"></span>
+                </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item scroll-trigger" href="paciente_tratamiento.html">
+                              Registro Tratamientos
+                           </a>
+                        <a class="dropdown-item scroll-trigger" href="paciente_examen.html">
+                        Exámenes
+                    </a>
+                        <a class="dropdown-item scroll-trigger" href="paciente_hora.html">
+                          Registro Hora Médica
+                    </a>
+                        <li class="nav-item">
+                            <a class="nav-link scroll-trigger" href="index.html">
+                      Cerrar sesión 
+                  </a>
+                        </li>
+
+                </li>
+            </ul>
+
+            </div>
+            <!-- Navigation Links -->
+    </nav>
+    <!-- End Navigation Bar -->
+
+
+    <div class="container">
+        <div class="col-50">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6" id="contact-form">
+                        <h1>Registro de exámenes, Rosa Jara</h1>
+                    </div>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalT">Ingresar examen</a></p></button> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover" id="tabla1">
+        <thead>
+            <tr>
+                <h1>Historial de horas médicas</h1>
+            </tr>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Tipo examen</th>
+                <th scope="col">Nombre examen</th>
+                <th scope="col">resultado</th>
+                <th scope="col">Rango normal</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Sangre</td>
+                <td>Perfil lipídico</td>
+                <td>Sin detalles visibles</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Orina</td>
+                <td>Calculo renal</td>
+                <td>Sin observaciones</td>
+                <td>Normal</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="col-50">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-sm-6">
+                    <h1>Exámenes Rosa Jara</h1>
+                    <canvas id="popChart" width="300" height="200"></canvas>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6">
+                        <h1>Exámenes Rosa Jara</h1>
+                        <canvas id="popChart1" width="500" height="350"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="ModalT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingrese nuevo examen</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <!---Botón-Modal-->
+                        <div class="container">
+                            <div class="col-50">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-sm-6" id="paciente-form">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="contact-name">Fecha </label>
+                                                    <input type="text" class="form-control" id="fecha_examen" placeholder="DD-MM-AAAA">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="contact-email">Tipo examen</label>
+                                                    <input type="text" class="form-control" id="tipo" placeholder="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Nombre examen</label>
+                                                    <input type="text" class="form-control" id="nombre_examen" placeholder="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Resultado</label>
+                                                    <input type="text" class="form-control" id="resultado" placeholder="DD-MM-AAAA">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Rango normal</label>
+                                                    <input type="text" class="form-control" id="normal" placeholder="">
+                                                </div>
+
+
+                                                <div class="btn-group">
+                                                    <button type="button" id="agrega_dato1" class="btn btn-outline-secondary" onclick="agregar_examen()">Agregar examen</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Fin Botón-Modal-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <script>
+            var popCanvas = document.getElementById("popChart");
+            var barChart = new Chart(popCanvas, {
+                type: 'bar',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+            var popCanvas = document.getElementById("popChart1");
+            var barChart = new Chart(popCanvas, {
+                type: 'line',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+        </script>
+</body>
+
+</html>
