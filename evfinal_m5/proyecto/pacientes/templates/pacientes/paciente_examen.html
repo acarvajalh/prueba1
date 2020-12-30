@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+<br>
+{% block paciente_examen %}
+
+
+
+    <div class="container">
+        <div class="col-50">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6" id="contact-form">
+                        <h1>Registro de exámenes, Rosa Jara</h1>
+                    </div>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalT">Ingresar examen</a></p></button> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover" id="tabla1">
+        <thead>
+            <tr>
+                <h1>Historial de horas médicas</h1>
+            </tr>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Tipo examen</th>
+                <th scope="col">Nombre examen</th>
+                <th scope="col">resultado</th>
+                <th scope="col">Rango normal</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Sangre</td>
+                <td>Perfil lipídico</td>
+                <td>Sin detalles visibles</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Orina</td>
+                <td>Calculo renal</td>
+                <td>Sin observaciones</td>
+                <td>Normal</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="col-50">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-sm-6">
+
+                    <h1>Exámenes Rosa Jara</h1>
+
+                    <h1>Perfil Lipídico</h1>
+
+                    <canvas id="popChart" width="300" height="200"></canvas>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6">
+
+                        <h1>Exámenes Rosa Jara</h1>
+
+                        <h1>Perfil Lipídico</h1>
+
+                        <canvas id="popChart1" width="500" height="350"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="ModalT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingrese nuevo examen</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <!---Botón-Modal-->
+                        <div class="container">
+                            <div class="col-50">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-sm-6" id="paciente-form">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="contact-name">Fecha </label>
+                                                    <input type="text" class="form-control" id="fecha_examen" placeholder="DD-MM-AAAA">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="contact-email">Tipo examen</label>
+                                                    <input type="text" class="form-control" id="tipo" placeholder="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Nombre examen</label>
+                                                    <input type="text" class="form-control" id="nombre_examen" placeholder="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Resultado</label>
+                                                    <input type="text" class="form-control" id="resultado" placeholder="DD-MM-AAAA">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="contact-email">Rango normal</label>
+                                                    <input type="text" class="form-control" id="normal" placeholder="">
+                                                </div>
+
+
+                                                <div class="btn-group">
+                                                    <button type="button" id="agrega_dato1" class="btn btn-outline-secondary" onclick="agregar_examen()">Agregar examen</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Fin Botón-Modal-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <script>
+            var popCanvas = document.getElementById("popChart");
+            var barChart = new Chart(popCanvas, {
+                type: 'bar',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+            var popCanvas = document.getElementById("popChart1");
+            var barChart = new Chart(popCanvas, {
+                type: 'line',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+        </script>
+
+
+
+
+<!---Nuevo-->
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm-6">
+            <h1>Perfil Renal</h1>
+            <canvas id="popChart11" width="500" height="350"></canvas>
+        </div>
+
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm-6">
+            <h1>Perfil Renal</h1>
+            <canvas id="popChart12" width="500" height="350"></canvas>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    var popCanvas = document.getElementById("popChart11");
+    var barChart = new Chart(popCanvas, {
+        type: 'bar',
+        data: {
+            labels: ["Nitrógeno de urea", "Creatinina", "Ácido Úrico", "Proteína Total", "Glucosa"],
+            datasets: [{
+                label: 'Cantidad',
+                data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)'
+                ]
+            }]
+        }
+    });
+    var popCanvas = document.getElementById("popChart12");
+    var barChart = new Chart(popCanvas, {
+        type: 'line',
+        data: {
+            labels: ["Nitrógeno de urea", "Creatinina", "Ácido Úrico", "Proteína Total", "Glucosa"],
+            datasets: [{
+                label: 'Cantidad',
+                data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)'
+                ]
+            }]
+        }
+    });
+</script>
+        
+{% endblock paciente_examen %}

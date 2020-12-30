@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+<br>
+{% block paciente_tratamiento %}
+    <!---Botón-Modal-->
+    <div class="container">
+        <div class="col-50">
+            <div class="card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="col-sm-6" id="contact-form">
+                            <h1>Registro de tratamientos médicos, Rosa Jara</h1>
+                        </div>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalT">Agregar información</a></p></button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---Fin Botón-Modal-->
+
+
+
+
+
+
+    <table class="table table-hover" id="tabla1">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Diagnóstico</th>
+                <th scope="col">Tratamiento</th>
+                <th scope="col">Próximo Control</th>
+                <th scope="col">Comentarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Control Gastritis</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Paciente es dada de alta</td>
+            </tr>
+            <tr>
+                <th scope="row">22-09-2020</th>
+                <td>Gastritis</td>
+                <td>Medicamento1 por 7 días, cada 12 horas</td>
+                <td>Visita en una semana</td>
+                <td>N/A</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingrese nuevo tratamiento</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <!---Botón-Modal-->
+                    <div class="container">
+                        <div class="col-50">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-sm-6" id="paciente-form">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="contact-name">Fecha</label>
+                                                <input type="text" class="form-control" id="fecha" placeholder="DD-MM-AAAA">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact-email">Diagnóstico</label>
+                                                <input type="text" class="form-control" id="diagnostico" placeholder="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="contact-email">Tratamiento</label>
+                                                <input type="text" class="form-control" id="tratamiento" placeholder="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="contact-email">Próximo Control</label>
+                                                <input type="text" class="form-control" id="control" placeholder="DD-MM-AAAA">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="contact-email">Comentarios</label>
+                                                <input type="text" class="form-control" id="comentario" placeholder="">
+                                            </div>
+
+
+                                            <div class="btn-group">
+                                                <button type="button" id="agrega_dato1" class="btn btn-outline-secondary" onclick="agregar()">Agregar información</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!---Fin Botón-Modal-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock paciente_tratamiento %}

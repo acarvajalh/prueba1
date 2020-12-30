@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+<br>
+{% block pacientes %}
+    <!-- Section: Pacientes -->
+    <div class="container-fluid bg-dark" id="competencias">
+        <div class="row">
+            <h3>Información de Pacientes</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <h3 class="card-header">Datos Generales </h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Paciente</h4>
+                        <p class="card-text"> Nombre: Rosa Jara I.</p>
+                        <p class="card-text"> Fecha de Nacimiento: 29-09-1970 </p>
+                        <p class="card-text"> Dirección: Carmen 603, Santiago. </p>
+                        <p class="card-text"> Teléfono: +5673098902 </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h3>Resumen </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <h3 class="card-header">Historial</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Últimas actividades</h4>
+                        <p class="card-text"> 13-09-2020 Examen de sangre: perfil lipídico</p>
+                        <p class="card-text"> 3-05-2020 Examen de sangre: glucosa</p>
+
+                        <button type="button" class="btn btn-success" onclick="ver_historial()">Ver historial completo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Section: Pacientes -->
+    {% endblock pacientes %}

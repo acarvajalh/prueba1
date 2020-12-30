@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+<br>
+{% block inicio %}
+    <!-- Section: Principal -->
+   
+    <div class="container-fluid bg-principal" id="principal">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron jumbotron-main">
+                    <h2>Tu salud nos importa.</h2>
+                    <h3>Nosotros te ayudaremos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- End Section: Principal -->
+
+    <!-- Section: Competencias -->
+    <div class="container-fluid bg-dark" id="competencias">
+        <div class="row">
+            <h3>Nuestras Especialidades</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Medicina General</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Consultas médicas</h4>
+                        <p class="card-text">Contamos con un staff de Médicos Generales y especialistas en Medicina Familiar y Medicina Interna que se preocupan por el diagnóstico de lña condición inicial del paciente y abordan diferentes patologías comunes.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">                   
+                    <h3 class="card-header">Pediatría</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Recién nacidos y niños hasta la adolescencia.</h4>
+                        <p class="card-text">Contamos con un staff de Pediatras que se ocupan del estudio del crecimiento y el desarrollo de los niños hasta la adolescencia, así como el tratamiento de sus enfermedades.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Ginecología y Obstetricia</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Ginecólogos especialistas en Obstetricia</h4>
+                        <p class="card-text">Atendemos la salud reproductiva de manera integral, con un equipo médico que las acompaña en la adolescencia, embarazo y parto.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <h3 class="card-header">Odontología</h3>
+                    <div class="card-body">
+                        <h4 class="card-title">Urgencia Dental</h4>
+                        <p class="card-text">Contamos con todas las Especialidades del Área Odontológica. Atención personalizada para Adultos y Niños.</p>
+                        <a href="#!" class="btn btn-dark">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- End Section: Competencias -->
+
+    <!-- Section: Equipo -->
+    <div class="container-fluid bg-light" id="equipo">
+        <div class="row">
+            <h3>Nuestro Equipo</h3>
+        </div>
+        <div class="row">
+            <div id="team-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner" style="padding: 4rem;" role="listbox">
+                    <div style="height: 600px" class="carousel-item active">
+                        <img class="d-block img-fluid carousel-img" src="" alt="">
+                        <div class="carousel-caption">
+                            Ginecología y Obstetricia.<br> Las 24 horas del día, los siete días de la semana.
+                        </div>
+                    </div>
+                    <div style="height: 600px" class="carousel-item">
+                        <img class="d-block img-fluid carousel-img" src="{% static 'img/dentista.jpeg' %}" alt="">                      
+                        <div class="carousel-caption">
+                            Contamos con todas las especialidades del Área Odontológica. <br> Atención personalizada para Adultos y Niños. <br> Agenda tu hora.
+                        </div>
+                    </div>
+                    <div style="height: 600px" class="carousel-item">
+                        <img class="d-block img-fluid carousel-img" src="{% static 'img/kine.jpeg' %}" alt="">                        
+                        <div class="carousel-caption">
+                            Contamos con todas las especialidades del Área Odontológica. <br> Atención personalizada para Adultos y Niños. <br> Agenda tu hora.
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#team-carousel" role="button" data-slide="prev">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                </a>
+                <a class="right carousel-control" href="#team-carousel" role="button" data-slide="next">
+                    <span class="icon-next" aria-hidden="true"></span>
+                </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#team-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#team-carousel" data-slide-to="1"></li>
+                    <li data-target="#team-carousel" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Equipo -->
+
+    <!-- Section: Enlaces -->
+    <div class="container-fluid bg-dark" id="enlaces">
+        <div class="row">
+            <h3>Proveedores de Salud</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media"> 
+                    <img class="d-flex mr-3" src="{% static 'img/pngwing.com.png' %}" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Hospitales</h5>
+                        <ul>
+                            <li>Hospital Clínico San Borja Arriarán <a href="https://hcsba.cl/wp/">Ver más</a></li>
+                            <li>Hospital Dr. Gustavo Fricke <a href="http://www.hospitalfricke.cl/">Ver más</a></li>
+                            <li>Hospital La Serena <a href="https://www.hospitalserena.cl/">Ver más</a></li>
+                            <li>Hospital de Iquique <a href="https://www.hospitaliquique.cl/">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="{% static 'img/cirujano.png' %}" alt="Generic placeholder image">                   
+                    <div class="media-body">
+                        <h5 class="mt-0">Clínicas</h5>
+                        <ul>
+                            <li>Clínica Alemana de Santiago<a href="https://www.clinicaalemana.cl/">Ver más</a></li>
+                            <li>Clínica RedSalud <a href="https://www.redsalud.cl">Ver más</a></li>
+                            <li>Clínica Indisa <a href="https://www.indisa.cl">Ver más</a></li>
+                            <li>Clínica Santa Rosa<a href="https://www.clinicasantarosa.cl/">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="{% static 'img/lesion.png' %}" alt="Generic placeholder image">                   
+                    <div class="media-body">
+                        <h5 class="mt-0">Isapres</h5>
+                        <ul>
+                            <li>Isapre Colmena <a href="https://www.colmena.cl">Ver más</a></li>
+                            <li>Isapre Consalud <a href="https://www.consalud.cl">Ver más</a></li>
+                            <li>Isapre Banmédica <a href="https://www.banmedica.cl">Ver más</a></li>
+                            <li>Isapre Cruz Blanca <a href="https://www.cruzblanca.cl">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="media">
+                    <img class="d-flex mr-3" src="{% static 'img/tomados-de-la-mano.png' %}" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Fonasa</h5>
+                        <ul>
+                            <li>Fonasa tipo A<a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo B <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo C <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                            <li>Fonasa tipo D <a href="https://www.fonasa.cl/sites/fonasa/inicio">Ver más</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Enlaces -->
+    {% endblock inicio %}

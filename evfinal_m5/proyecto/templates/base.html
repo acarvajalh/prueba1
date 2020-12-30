@@ -1,0 +1,183 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Awakelab Full Stack Python</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Loading Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Clínica Médica </a>
+
+    <!-- Navigation Bar Hamburger-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <!-- End Navigation Bar Hamburger -->
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link scroll-trigger" href="{% url 'inicio' %}">
+              Inicio
+            
+          </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link scroll-trigger" href="{% url 'contacto' %}">
+              Contacto
+          </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Registro/ Inicio de Sesión<span class="caret"></span>
+          </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item scroll-trigger" href="#" data-toggle="modal" data-target="#profile-modal">
+                  Iniciar sesión
+              </a>
+                    <a class="dropdown-item scroll-trigger" data-toggle="modal" data-target="#settings-modal">
+                    Registro
+              </a>
+
+            </li>
+        </ul>
+
+        </div>
+        <!-- Navigation Links -->
+</nav>
+<!-- End Navigation Bar -->
+ 
+        {% block inicio %}{% endblock inicio %}
+
+        {% block pacientes %}{% endblock pacientes %}
+
+        {% block contacto %}{% endblock contacto %}
+
+        {% block paciente_examen %}{% endblock paciente_examen %}
+
+        {% block paciente_hora %}{% endblock paciente_hora %}
+
+        {% block paciente_tratamiento %}{% endblock paciente_tratamiento %}
+
+    <!-- MODAL FORMS -->
+    <div class="modal" id="profile-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+
+                </div>
+                <div class="modal-body">
+
+                    <!-- Section:  modal Inicio sesion -->
+                    <div class="container-fluid bg-light" id="inicio_sesion">
+                        <div class="row">
+                            <h2>Iniciar sesión</h2>
+                        </div>
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-sm-6" id="contact-form">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="contact-name">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="persona_correo" placeholder="example@micorreo.cl">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Contraseña</label>
+                                        <input type="email" class="form-control" id="persona_pass" placeholder="1234">
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="validar_sesion()">Iniciar sesión</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Section: modal Inicio sesion -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="modal" id="settings-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+
+                </div>
+                <div class="modal-body">
+                    Registro
+                    <!-- Section: Modal Registrar -->
+                    <div class="container-fluid bg-light" id="contacto">
+                        <div class="row">
+                            <h2>Regístrate aquí</h2>
+                        </div>
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-sm-6" id="contact-form">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="contact-name">Nombres y Apellidos</label>
+                                        <input type="text" class="form-control" id="contact-name" placeholder="example@micorreo.cl">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Crear Contraseña</label>
+                                        <input type="email" class="form-control" id="contact-email" placeholder="1234">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Repetir Contraseña</label>
+                                        <input type="email" class="form-control" id="contact-email" placeholder="1234">
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="registrar()">Registrar</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Section: Modal Registrar -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL FORMS -->
+
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+<footer class="footer bg-dark text-center">
+    <p class="text-muted">&copy; 2020 Awakelab.</p>
+    <p class="text-muted">Grupo Full Stack Python</p>
+</footer>
+
+
+</html>
