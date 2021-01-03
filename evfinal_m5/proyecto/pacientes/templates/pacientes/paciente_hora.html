@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav-bar %}
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      Rosa Jara<span class="caret"></span>
+</a>
+
+    <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+            Registro Tratamientos
+         </a>
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+      Exámenes
+  </a>
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_hora' %}">
+        Registro Hora Médica
+  </a>
+
+</li>
+{% endblock nav-bar %}
+<br>
+{% block paciente_hora %}
+ 
+
+    <div class="container">
+        <div class="col-50">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6" id="contact-form">
+                        <h1>Toma de horas médicas, Rosa Jara</h1>
+                    </div>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalT">Solicitar hora</a></button>
+
+             <a href="disponibilidad.html">Ver disponibilidad de horas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover" id="tabla1">
+        <thead>
+            <tr>
+                <h1>Historial de horas médicas</h1>
+            </tr>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Médico</th>
+                <th scope="col">Previsión</th>
+                <th scope="col">Consulta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">30-09-2020</th>
+                <td>Meidicina general</td>
+                <td>Juan Carlos Cabello</td>
+                <td>Fonasa</td>
+                <td>Clínica tremenda Salud</td>
+            </tr>
+            <tr>
+                <th scope="row">30-11-2020</th>
+                <td>Meidicina general</td>
+                <td>Juan Carlos Cabello</td>
+                <td>Fonasa</td>
+                <td>Clínica tremenda Salud</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Solicitar hora</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <!---Botón-Modal-->
+                    <div class="container">
+                        <div class="col-50">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-sm-6" id="paciente-form">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="fecha_consulta">Fecha Control</label>
+
+
+                                                <input type="text" class="form-control" id="fecha_consulta" placeholder="DD-MM-AAAA">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="especialidad">Especialidad</label>
+                                                <input type="text" class="form-control" id="especialidad" placeholder="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="medico">Médico</label>
+                                                <input type="text" class="form-control" id="medico" placeholder="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="prevision">Previsión</label>
+                                                <input type="text" class="form-control" id="prevision" placeholder="DD-MM-AAAA">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="consulta">Consulta</label>
+                                                <input type="text" class="form-control" id="consulta" placeholder="">
+                                            </div>
+
+
+                                            <div class="btn-group">
+                                                <button type="button" id="agrega_dato1" class="btn btn-outline-secondary" onclick="agregar_consulta()">Crear reserva de hora</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!---Fin Botón-Modal-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock paciente_hora %}

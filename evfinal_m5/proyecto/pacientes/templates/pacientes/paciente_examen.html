@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav-bar %}
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      Rosa Jara<span class="caret"></span>
+</a>
+
+    <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+            Registro Tratamientos
+         </a>
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+      Exámenes
+</li>
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      Escoger paciente<span class="caret"></span>
+</a>
+
+    <div class="dropdown-menu dropdown-menu-left">
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+            Alba Carvajal
+         </a>
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+      Javiera Ibacache  </a>
+      <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+        Francisca Cruz
+     </a>
+    <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+  Juan Carlos Cabello  </a>
+
+</li>
+{% endblock nav-bar %}
+<br>
+{% block paciente_examen %}
+<br>
+<div class="container">
+    <div class="col-50">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-sm-6" id="contact-form">
+                    <h1>Histórico de exámenes</h1>
+                    <h4><a href="{% url 'pacientes:ingreso_examen' %}">Agregar nuevo examen</a></h4>
+                </div>
+                <table class="table table-hover" id="tabla1">
+                    <thead>
+                        <tr>
+                            <h1>Exámenes realizados</h1>
+                        </tr>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Tipo examen</th>
+                            <th scope="col">Nombre examen</th>
+                            <th scope="col">Resultado</th>
+                            <th scope="col">Rango normal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for examen in examenes %}
+                        <tr>
+                            <td>{{examen.id}}</td>
+                            <td>{{examen.fecha}}</td>
+                            <td>{{examen.tipo}}</td>
+                            <td>{{examen.nombre}}</td>
+                            <td>{{examen.resultado}}</td>
+                            <td>{{examen.rango}}</td>
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Se crea el grafico y se asigna ancho y alto -->
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm-6">
+                <h1>Resultados</h1>
+                <canvas id="myChart"></canvas>
+            </div>
+    
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm-6">
+                <h1>Hemograma</h1>
+                <canvas id="popChart" width="500" height="350"></canvas>
+            </div>
+    
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm-6">
+                <h1>Perfil Renal</h1>
+                <canvas id="popChart1" width="500" height="350"></canvas>
+            </div>
+    
+        </div>
+    </div>
+    
+</div>
+
+        <script>
+            var popCanvas = document.getElementById("popChart");
+            var barChart = new Chart(popCanvas, {
+                type: 'bar',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+            var popCanvas = document.getElementById("popChart1");
+            var barChart = new Chart(popCanvas, {
+                type: 'line',
+                data: {
+                    labels: ["Ecotomografia", "Orina", "Lipidico", "Bioquimico", "Rayos"],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [1379302771, 1281935911, 326625791, 260580739, 207353391],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                }
+            });
+        </script>   
+        <script>
+            var ctx= document.getElementById("myChart");
+            var myChart= new Chart(ctx,{
+            
+                /* En type se define el tipo de grafico a mostrar */
+            
+                type:"bar",
+                data:{
+                    labels:['Dato1','Dato2','Dato3'],
+                    datasets:[{
+                            label:'Resultado',
+                            data:{{valor}},
+                            backgroundColor:[
+            
+                                /* Se define el color en formato RGB por cada barra */
+            
+                                'rgb(51, 255, 62)',
+                                'rgb(51, 93, 255)',
+                                'rgb(207, 40, 52)'
+                            ]
+                    }]
+                },
+                options:{
+                    scales:{
+                        yAxes:[{
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                        }]
+                    }
+                }
+            });
+     </script>     
+{% endblock paciente_examen %}

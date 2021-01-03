@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav-bar %}
+<a href="{% url 'pacientes:formulario' %}" class="nav-link scroll-trigger" >
+Registro pacientes  
+</a>
+
+{% endblock nav-bar %}
+<br>
+{% block pacientes %}
+    <!-- Section: Pacientes -->
+    <br>
+    <br>
+    <div class="container">
+        <div class="col-50">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-sm-6">
+                        <h2>Bienvenido Administrador, por favor seleccione un paciente a consultar</h2>
+                        <ul>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                              Escoger paciente<span class="caret"></span>
+                        </a>
+                        
+                            <div class="dropdown-menu dropdown-menu-left">
+                                <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+                                    Alba Carvajal
+                                 </a>
+                                <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+                              Javiera Ibacache  </a>
+                              <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+                                Francisca Cruz
+                             </a>
+                            <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+                          Juan Carlos Cabello  </a>
+    
+                        </li>
+                    </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+    <!-- End Section: Pacientes -->
+    {% endblock pacientes %}

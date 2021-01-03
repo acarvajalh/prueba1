@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contacto %}
+    <!-- Section: Principal -->
+    <div class="container-fluid bg-principal" id="principal">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron jumbotron-main">
+                    <h2>Si tienes dudas o consultas, solo escríbenos.</h2>
+                    <h3>Te responderemos a la brevedad.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Principal -->
+
+    <!-- Section: Contacto -->
+    <div class="container-fluid bg-light" id="contacto">
+        <div class="row">
+            <h2>Contáctanos</h2>
+        </div>
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-sm-6" id="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="contact-name">Nombre</label>
+                        <input type="text" class="form-control" id="contact-name" placeholder="Tu Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="contact-email" placeholder="Tu Correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-msg">Mensaje</label>
+                        <textarea class="form-control" id="contact-msg" placeholder="Tu Mensaje" rows="4"></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-secondary">Enviar</button>
+                        <button type="button" class="btn btn-outline-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Section: Contacto -->
+    {% endblock contacto %}
