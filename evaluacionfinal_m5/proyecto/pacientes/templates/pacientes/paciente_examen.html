@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav-bar %}
+
+    <a href="{% url 'pacientes:paciente_examen' %}" class="nav-link scroll-trigger" >
+        Examenes  
+    </a>
+    <a href="{% url 'pacientes:paciente_tratamiento' %}" class="nav-link scroll-trigger" >
+        Tratamiento
+    </a>
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      Pacientes<span class="caret"></span>
+</a>
+
+    <div class="dropdown-menu dropdown-menu-left">
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+            Alba Carvajal
+         </a>
+        <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+      Javiera Ibacache  </a>
+      <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_tratamiento' %}">
+        Francisca Cruz
+     </a>
+    <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:paciente_examen' %}">
+  Juan Carlos Cabello  </a>
+  <a class="dropdown-item scroll-trigger" href="{% url 'pacientes:formulario' %}">
+    Crear paciente  </a>
+
+</li>
+{% endblock nav-bar %}
+<br>
+{% block paciente_examen %}
+<br>
+<div class="container">
+    <div class="col-50">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-sm-6" id="contact-form">
+                    <h1>Histórico de exámenes</h1>
+                    <h4><a href="{% url 'pacientes:ingreso_examen' %}">Agregar nuevo examen</a></h4>
+                </div>
+                <table class="table table-hover" id="tabla1">
+                    <thead>
+                        <tr>
+                            <h1>Exámenes realizados</h1>
+                        </tr>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Tipo examen</th>
+                            <th scope="col">Nombre examen</th>
+                            <th scope="col">Resultado</th>
+                            <th scope="col">Rango normal</th>
+                            <th scope="col">id paciente</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                       
+                        {% for examen in examenes %}
+                        
+                        <tr>
+                            <td>{{examen.id}}</td>
+                            <td>{{examen.fecha}}</td>
+                            <td>{{examen.tipo}}</td>
+                            <td>{{examen.nombre}}</td>
+                            <td>{{examen.resultado}}</td>
+                            <td>{{examen.rango}}</td>
+                            <td>{{examen.id_paciente}}</td>
+                        </tr>
+                        
+                     {% endfor %}
+                    
+                    </tbody>
+                </table>
+                <h4><a href="{% url 'pacientes:grafico2' %}">grafico para visualizar resultados</a></h4>
+            </div>
+        </div>
+    </div>
+
+    
+     </script>     
+{% endblock paciente_examen %}

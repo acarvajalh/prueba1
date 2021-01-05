@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block form %}
+<br>
+<div class="container">
+    <div class="col-50">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-sm-6" id="contact-form">
+                    <h1>El formulario se recibió con éxito!</h1>
+                </div>
+                <h4><a href="{% url 'pacientes:formulario' %}">Crear otro registro de paciente</a></h4>
+                <table class="table table-hover" id="tabla1">
+                    <thead>
+                        <tr>
+                            <h1>Pacientes registrados</h1>
+                        </tr>
+                        <tr>
+                            <th scope="col">Id paciente</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for paciente in pacientes %}
+                        <tr>
+                            <td>{{paciente.id}}</td>
+                            <td>{{paciente.Nombre}}</td>
+                            <td>{{paciente.Apellido}}</td>
+                            <td>{{paciente.Edad}}</td>
+                            <td>{{paciente.fecha_nacimiento}}</td>
+                            <td> <p><a href="{% url 'pacientes:eliminar_paciente' id=paciente.id %}">  Eliminar</a></p></td>
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock form %}
